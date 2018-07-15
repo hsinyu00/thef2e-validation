@@ -1,0 +1,23 @@
+{
+  "name": "thef2e-todo",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hsinyu00/thef2e-todo.git"
+  },
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.x",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-watch": "^4.1.1"
+  },
+  "dependencies": {}
+}

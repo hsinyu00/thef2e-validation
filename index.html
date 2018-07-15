@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <meta http-equiv="content-language" content="zh-tw">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+    <title>Validation - THE F2E</title>
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.0/normalize.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:500">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+            crossorigin="anonymous">
+    <link rel="stylesheet" href="css/validation.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="progress"></div>
+        <form class="form" id="commentForm" method="get" action="">
+            <fieldset>
+                <div class="title">Create Account</div>
+                <div class="sub-title">Glad to see you here!</div>
+                <p>
+                    <label for="email">Account</label>
+                    <input id="email" name="email" type="text" placeholder="example@email.com">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </p>
+                <p>
+                    <label for="password">Password</label>
+                    <input id="password" type="password" name="password" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </p>
+                <p>
+                    <label for="confirm">Comfirm Password</label>
+                    <input id="confirm" type="password" name="confirm" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </p>
+                <p>
+                    <input class="submit" type="submit" value="SUBMIT & NEXT">
+                </p>
+            </fieldset>
+        </form>
+    </div>
+    <script>
+        jQuery.validator.setDefaults({
+            debug: true,
+            success: "valid"
+        });
+        $("#commentForm").validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true,
+                    minlength: 8
+                },
+                confirm: {
+                    required: true,
+                    equalTo: 'input[name="password"]'
+                }
+            },
+            messages: {
+                email: 'INVALID EMAIL',
+                password: 'MINIMUM 8 CHARACTERS',
+                confirm: 'NOT MATCH'
+            }
+        });
+    </script>
+</body>
+</html>

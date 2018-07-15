@@ -1,0 +1,99 @@
+body {
+    font-family: 'Roboto', 'sans-serif'
+}
+.container {
+    width: 456px;
+    margin: 0 auto;
+    border-top: 3px solid #0275D8;
+}
+.form {
+    p {
+        margin: 0 0 24px;
+        position: relative;
+    }
+    .title {
+        font-size: 48px;
+        text-align: center;
+    }
+    .sub-title {
+        font-size: 24px;
+        text-align: center;
+    }
+    fieldset {
+        border: 0;
+        padding: 0;
+    }
+    label {
+        font-size: 20px;
+        display: block;
+        margin-bottom: 8px;
+    }
+    input {
+        box-sizing: border-box;
+        width: 100%;
+        border: 2px solid #000;
+        border-radius: 8px;
+        font-size: 20px;
+        padding: 12px 20px 16px;
+    }
+    input[type="submit"] {
+        color: #fff;
+        background-color: #0275D8;
+        border: 2px solid#4A90E2;
+        margin-top: 16px;
+    }
+    input.error {
+        border-color: #F5A623;
+        &:before {
+            position: absolute;
+            left: -30px;
+            font-family: "Font Awesome";
+            content: "\f071";
+            color: #F5A623;
+        }
+    }
+    .fa-exclamation-triangle {
+        display: none;
+        color: #F5A623;
+        position: absolute;
+        right: 0;
+    }
+    label.error {
+        position: absolute;
+        white-space: nowrap;
+        font-size: 14px;
+        color: #fff;
+        background-color: #F5A623;
+        display: inline-block;
+        padding: 6px 8px;
+        border-radius: 4px;
+        left: 104%;
+        transform: translate(0, 50%);
+        &:before {
+            content: "";
+            position: absolute;
+            left: -6px;
+            top: 10px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 4px 6px 4px 0;
+            border-color: transparent #f5a423 transparent transparent;
+        }
+        & + .fa-exclamation-triangle {
+            display: inline-block;
+        }
+        &.valid {
+            display: none !important;
+            & + .fa-exclamation-triangle {
+                display: none;
+            }
+        }
+    }
+}
+
+.align-center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
